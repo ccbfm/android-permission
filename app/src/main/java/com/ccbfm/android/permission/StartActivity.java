@@ -14,6 +14,7 @@ public class StartActivity extends BaseActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        RestartUtils.getInstance().setAppStatus(RestartUtils.STATUS_NORMAL);
         super.onCreate(savedInstanceState);
 
         initPermission(this, "str");
