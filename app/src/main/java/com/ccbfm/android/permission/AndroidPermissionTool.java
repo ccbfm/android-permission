@@ -38,7 +38,7 @@ public class AndroidPermissionTool {
     }
 
     private static Dialog createDialog(final Activity activity, String[] permissions) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(activity, R.style.AndroidPermission);
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity, R.style.PermissionDialog);
         LinearLayout linearLayout = new LinearLayout(activity);
         TextView textView = new TextView(activity);
         textView.setText("立即开启");

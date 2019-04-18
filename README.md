@@ -12,7 +12,7 @@ allprojects {
 
 dependencies {
 
-    implementation "com.github.ccbfm:android-permission:1.0.0"
+    implementation "com.github.ccbfm:android-permission:1.0.1"
 }
 
 
@@ -21,21 +21,22 @@ dependencies {
 2.使用AOP需要引入Aspectj依赖 ccbfm/android-aspectj-plugin
 
     // 添加申请权限失败回调
-    AndroidPermission.init(new PermissionDeniedCallback() {
+    AndroidPermission.init(new PermissionDeniedHintAdapter() {
+
         @Override
-        public void onPermissionsDenied(String[] permissions) {
-            StringBuilder sb = new StringBuilder(permissions.length);
-            for (String str : permissions) {
-                sb.append(" ").append(str).append(" ");
-            }
-            String str = "以下权限授权失败：\n" + sb.toString();
-            Toast.makeText(getApplicationContext(), str, Toast.LENGTH_SHORT).show();
+        public void onPermissionDeniedHintHide() {
+
+        }
+
+        @Override
+        public void onPermissionDeniedHintShow(Activity activity, String[] permissions) {
+
         }
     });
     
     
-    //需要申请权限的地方 添加注解并加入所需权限 方法需要第一个参数为Context
+    //需要申请权限的地方 添加注解并加入所需权限 方法需要第一个参数为Activity
     @APermission(permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE})
-    private void checkPermission(Context context) {
+    private void checkPermission(Activity activity) {
         initViews();
     }
