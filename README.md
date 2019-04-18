@@ -12,7 +12,7 @@ allprojects {
 
 dependencies {
 
-    implementation "com.github.ccbfm:android-permission:1.0.1"
+    implementation "com.github.ccbfm:android-permission:1.1.0"
 }
 
 
