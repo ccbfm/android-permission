@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Build;
-import android.util.Log;
 
 /**
  * @author ccbfm
@@ -55,7 +54,7 @@ public class AndroidPermission {
                     .add(fragment, TAG_FRAGMENT)
                     .commitAllowingStateLoss();
         }
-        Log.d("wds", "request---"+fragment);
+
         if (fragment instanceof PermissionFragment) {
             ((PermissionFragment) fragment).setPermissionCallback(
                     mPermissions, mPermissionCallback);

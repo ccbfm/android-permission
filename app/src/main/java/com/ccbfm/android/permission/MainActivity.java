@@ -99,6 +99,6 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        //Log.d("wds", "MainActivity-onStop---");
+        //Log.d(TAG, "MainActivity-onStop---");
     }
 }
