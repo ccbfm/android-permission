@@ -35,7 +35,7 @@ dependencies {
     });
     
     
-    //需要申请权限的地方 添加注解并加入所需权限 方法需要第一个参数为Activity
+    //需要申请权限的地方 添加注解并加入所需权限 方法需要第一个参数为Activity  （在onCreate中调用）
     @APermission(permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE})
     private void checkPermission(Activity activity) {
         initViews();
